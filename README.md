@@ -12,6 +12,7 @@ expect(
         props: {
           title: "my"
         },
+        // build by rollup iife
         componentCode: `
         var x=function(props){ return React.createElement('div', {},props.title);};
       `
