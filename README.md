@@ -12,6 +12,7 @@ expect(
         props: {
           title: "my"
         },
+        // version:'16.9.0', // currently only support 16.9.0
         // build by rollup iife
         componentCode: `
         var x=function(props){ return React.createElement('div', {},props.title);};

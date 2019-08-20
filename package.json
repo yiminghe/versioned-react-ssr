@@ -1,6 +1,6 @@
 {
   "name": "versioned-react-ssr",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "server side render react component by react version",
   "author": "yiminghe@gmail.com",
   "license": "MIT",
@@ -9,7 +9,9 @@
     "url": "http://github.com/yiminghe/versioned-react-ssr.git"
   },
   "main": "lib/index.js",
-  "files": ["lib"],
+  "files": [
+    "lib"
+  ],
   "devDependencies": {
     "jest": "^24.9.0",
     "prettier": "^1.18.2",
@@ -19,5 +21,8 @@
   "scripts": {
     "pub": "npm publish && git push",
     "test": "jest"
+  },
+  "dependencies": {
+    "object-assign": "^4.1.1"
   }
 }
