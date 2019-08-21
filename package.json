@@ -1,6 +1,6 @@
 {
   "name": "versioned-react-ssr",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "description": "server side render react component by react version",
   "author": "yiminghe@gmail.com",
   "license": "MIT",
