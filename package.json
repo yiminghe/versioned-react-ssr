@@ -58,18 +58,18 @@
     "pre-commit": "^1.2.2",
     "prettier": "^1.11.1",
     "react": "^16.9.0",
-    "react-dom": "^16.9.0"
+    "react-dom": "^16.9.0",
+    "@pika/plugin-build-types": "^0.6.0"
   },
   "scripts": {
     "lint-staged": "lint-staged",
     "prettier": "prettier --write \"{src,__tests__}/**/*.{js,ts}\"",
-    "pub": "np --no-publish --no-release-draft && npm run build && npm publish pkg",
+    "pub": "npm run build && np --no-publish --no-release-draft --no-cleanup &&  npm publish pkg",
     "build": "pack build && node scripts/clean.js",
     "test": "jest",
     "coverage": "jest --coverage && cat ./coverage/lcov.info | coveralls"
   },
   "dependencies": {
-    "@pika/plugin-build-types": "^0.6.0",
     "object-assign": "^4.1.1"
   }
 }
