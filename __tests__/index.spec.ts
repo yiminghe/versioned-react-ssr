@@ -44,6 +44,16 @@ describe('render component', () => {
     ).toMatchInlineSnapshot(`"<div data-reactroot=\\"\\"></div>"`);
   });
 
+  it('render component to string not ends with ";"', () => {
+    expect(
+      render.renderComponentCodeToString({
+        componentCode: `
+        var x=function(props){ return React.createElement('div', {});}
+      `,
+      }),
+    ).toMatchInlineSnapshot(`"<div data-reactroot=\\"\\"></div>"`);
+  });
+
   it('render component to static markup', () => {
     expect(
       render.renderComponentCodeToStaticMarkup({
