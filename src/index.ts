@@ -3,14 +3,14 @@ const map: { [k: string]: number } = {
   [defaultVersion]: 1,
 };
 
-interface Config {
+export interface ISSRRenderConfig {
   componentCode: string;
   props?: { [k: string]: any };
   version?: string;
 }
 
 function render(
-  { componentCode, props = {}, version = defaultVersion }: Config,
+  { componentCode, props = {}, version = defaultVersion }: ISSRRenderConfig,
   method: string,
 ) {
   if (map[version] !== 1) {
@@ -35,18 +35,18 @@ function render(
   return ReactDOMServer[method](React.createElement(Component, props));
 }
 
-export function renderComponentCodeToString(config: Config) {
+export function renderComponentCodeToString(config: ISSRRenderConfig) {
   return render(config, 'renderToString');
 }
 
-export function renderComponentCodeToStaticMarkup(config: Config) {
+export function renderComponentCodeToStaticMarkup(config: ISSRRenderConfig) {
   return render(config, 'renderToStaticMarkup');
 }
 
-export function renderComponentCodeToNodeStream(config: Config) {
+export function renderComponentCodeToNodeStream(config: ISSRRenderConfig) {
   return render(config, 'renderToNodeStream');
 }
 
-export function renderComponentCodeToStaticNodeStream(config: Config) {
+export function renderComponentCodeToStaticNodeStream(config: ISSRRenderConfig) {
   return render(config, 'renderToStaticNodeStream');
 }

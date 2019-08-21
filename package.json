@@ -74,5 +74,14 @@
   },
   "dependencies": {
     "object-assign": "^4.1.1"
-  }
+  },
+  "lint-staged": {
+    "*.{tsx,js,jsx,ts}": [
+      "prettier --write",
+      "git add"
+    ]
+  },
+  "pre-commit": [
+    "lint-staged"
+  ]
 }
