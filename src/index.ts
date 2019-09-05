@@ -24,11 +24,8 @@ function render(
 
   componentCode = componentCode
     .trim()
-    .replace(/^var\s+[\w_]+\s*=\s*(?=function)/, '');
-
-  if (componentCode.endsWith(';')) {
-    componentCode = componentCode.slice(0, componentCode.length - 1);
-  }
+    .replace(/^var\s+[\w_]+\s*=\s*(?=\(?function)/, '')
+    .replace(/;$/, '');
 
   const Component = eval('(' + componentCode + ')');
 
